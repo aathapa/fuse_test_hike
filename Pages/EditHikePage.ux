@@ -1,0 +1,41 @@
+<Page ux:Class="EditHikePage">
+  <Image Layer="Background" File="../Assests/background.jpg" StretchMode="Fill" Opacity=".4" />
+  <Router ux:Dependency="router" />
+  <JavaScript File="EditHikePage.js" />
+
+  <DockPanel>
+    <ScrollView>
+      <StackPanel Padding="10" ItemSpacing="15" >
+        <WhiteText ux:Class="TitleText" Opacity="0.6" Margin="0,0,0,5" />
+
+        <StackPanel>
+          <TitleText>Name: </TitleText>
+          <HikeTextBox Value="{name}" />
+        </StackPanel>
+        <StackPanel>
+          <TitleText>Location: </TitleText>
+          <HikeTextBox Value="{location}" />
+        </StackPanel>
+        <StackPanel>
+          <TitleText>Distance: </TitleText>
+          <HikeTextBox Value="{distance}" />
+        </StackPanel>
+        <StackPanel>
+          <TitleText>Rating: </TitleText>
+          <HikeTextBox Value="{rating}" />
+        </StackPanel>
+        <StackPanel>
+          <TitleText>Comments: </TitleText>
+          <TextView TextColor="#ccc" CaretColor="#ccc" Value="{comments}" TextWrapping="Wrap">
+            <Rectangle Layer="Background" Color="#fff2" CornerRadius="4" />
+          </TextView>
+      </StackPanel>
+    </StackPanel>
+    </ScrollView>
+    <Grid ColumnCount="2" Dock="Bottom">
+      <HikeButton Clicked="{goBack}" Text="Back"/>
+      <HikeButton Text="Cancel" />
+    </Grid>
+  </DockPanel>
+
+</Page>

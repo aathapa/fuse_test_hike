@@ -1,0 +1,28 @@
+<Page ux:Class="HomePage">
+  <Image Layer="Background" File="../Assests/background.jpg" StretchMode="Fill" Opacity=".4" />
+    <Router ux:Dependency="router" />
+
+    <JavaScript File="HomePage.js" />
+    <!-- Reusable Components start-->
+    <Rectangle ux:Class="Separator" Height="1" Fill="#fff4" />
+
+    <!-- Reusable components ends -->
+    <DockPanel>
+      <WhiteText FontSize="30" Dock="Top" Margin="20" TextAlignment="Center" >Recent Hikes</WhiteText>
+      <ScrollView>
+          <StackPanel>
+
+              <Each Items="{hikes}">
+                <Separator />
+                <Panel Clicked="{goToHike}" >
+                  <WhiteText Margin="10" Value="{name}" />
+                  <WhilePressed>
+                    <Scale Factor="0.95" Duration="0.08" Easing="QuadraticOut"/>
+                  </WhilePressed>
+                </Panel>
+                <Separator />
+              </Each>
+          </StackPanel>
+        </ScrollView>
+      </DockPanel>
+  </Page>
